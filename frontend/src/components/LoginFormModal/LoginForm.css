@@ -1,0 +1,19 @@
+.login{
+    width:400px;
+    border: 2px grey solid;
+    border-radius: 10px;
+    padding: 30px 50px;
+}
+
+.login-form-header{
+    font-size:30px;
+}
+
+.login-errors{
+    color:red;
+    font-size: 17px;
+}
+
+label{
+    font-size: 18px;
+}
