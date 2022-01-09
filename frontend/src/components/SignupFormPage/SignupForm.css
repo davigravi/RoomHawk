@@ -1,14 +1,20 @@
+.signup-header{
+    font-size: 25px;
+}
+
 .signup-container{
     display:block;
     box-sizing: border-box;
-    /* border:2px black solid; */
+    border:2px black solid;
     margin-left: auto;
     margin-right:auto;
-    width:15%;
+    width:33%;
+    padding-bottom: 15px;
 }
 
 .signup-content{
-    margin-left: 17px;
+    margin-left: 95px;
+    
 }
 
 label{
@@ -18,13 +24,15 @@ label{
 input{
     display:block;
     margin-bottom: 12px;
-    padding:2px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-right: 110px;
 }
 
 .submit-button{
-    margin-left: 48px;
-    /* margin-left:auto;
-    margin-right:auto; */
+    padding: 5px 20px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 
