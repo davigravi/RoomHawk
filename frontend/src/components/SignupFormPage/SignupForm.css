@@ -1,41 +1,39 @@
-.signup-header{
-    font-size: 25px;
-}
 
 .signup-container{
-    display:block;
-    box-sizing: border-box;
-    border:2px black solid;
-    margin-left: auto;
-    margin-right:auto;
-    width:33%;
-    padding-bottom: 15px;
+    display:flex;
 }
 
 .signup-content{
-    margin-left: 95px;
-    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin:0 auto;
+    border:2px grey solid;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 label{
-    display:block;
-    font-size: 17px;
+    font-size: 18px;
 }
+
+
 input{
     display:block;
     margin-bottom: 12px;
     padding-top:5px;
     padding-bottom: 5px;
-    padding-right: 110px;
+    width: 95%;
+
+}
+
+
+.errors{
+    color:red;
+    font-size:17px;
 }
 
 .submit-button{
-    padding: 5px 20px;
-    margin-left:auto;
-    margin-right:auto;
+    width:30%;
 }
-
-
-
-
-

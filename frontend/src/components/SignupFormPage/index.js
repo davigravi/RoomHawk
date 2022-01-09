@@ -35,7 +35,7 @@ function SignupFormPage() {
       <div className="signup-container">
         <div className='signup-content'>
           <h1 className='signup-header'>Welcome to RoomHawk</h1>
-          <ul>
+          <ul className="errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           <label>
