@@ -7,6 +7,10 @@
     width:15%;
 }
 
+.signup-content{
+    margin-left: 17px;
+}
+
 label{
     display:block;
     font-size: 17px;
@@ -19,6 +23,8 @@ input{
 
 .submit-button{
     margin-left: 48px;
+    /* margin-left:auto;
+    margin-right:auto; */
 }
 
 
