@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const listingsRouter = require('./listings')
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
+router.use('/listings', listingsRouter);
 
 //testing user auth middlewares routes
 // const asyncHandler = require('express-async-handler');

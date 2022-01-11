@@ -21,6 +21,22 @@ module.exports = {
         type: Sequelize.STRING(1000),
         allowNull:false,
       },
+      address: {
+        type: Sequelize.STRING(150),
+        allowNull:false,
+      },
+      city: {
+        type: Sequelize.STRING(50),
+        allowNull:false,
+      },
+      state: {
+        type: Sequelize.STRING(50),
+        allowNull:false,
+      },
+      zipcode: {
+        type: Sequelize.STRING(5),
+        allowNull:false,
+      },
       numberRooms: {
         type: Sequelize.INTEGER,
         allowNull:false,
@@ -42,15 +58,7 @@ module.exports = {
         allowNull:false,
       },
       pricePerNight: {
-        type: Sequelize.INTEGER,
-        allowNull:false,
-      },
-      city: {
-        type: Sequelize.STRING(50),
-        allowNull:false,
-      },
-      state: {
-        type: Sequelize.STRING(50),
+        type: Sequelize.TEXT,
         allowNull:false,
       },
       link: {

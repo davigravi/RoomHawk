@@ -1,4 +1,7 @@
 'use strict';
+
+const { Validator } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const Room = sequelize.define('Room', {
     userId: {
@@ -13,6 +16,25 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.STRING(1000),
       allowNull:false,
+    },
+    address: {
+      type: DataTypes.STRING(150),
+      allowNull:false,
+    },
+    city: {
+      type: DataTypes.STRING(50),
+      allowNull:false,
+    },
+    state: {
+      type: DataTypes.STRING(50),
+      allowNull:false,
+    },
+    zipcode: {
+      type: DataTypes.STRING(5),
+      allowNull:false,
+      validate: {
+        len: [5, 5]
+      },
     },
     numberRooms: {
       type: DataTypes.INTEGER,
@@ -35,15 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
     },
     pricePerNight: {
-      type: DataTypes.INTEGER,
-      allowNull:false,
-    },
-    city: {
-      type: DataTypes.STRING(50),
-      allowNull:false,
-    },
-    state: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.TEXT,
       allowNull:false,
     },
     link: {

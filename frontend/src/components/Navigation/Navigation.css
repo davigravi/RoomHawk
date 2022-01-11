@@ -33,3 +33,15 @@ a.signup{
 .login-button{
     font-size: large;
 }
+
+
+a.host:hover{
+    color:maroon;
+}
+
+a.host{
+    margin-right:40px;
+    text-decoration: none;
+    color:black;
+    font-size: large;
+}
