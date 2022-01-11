@@ -15,7 +15,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          userId: 2,
+          userId: 1,
           roomId: 1,
           startDate: new Date(),
           endDate: new Date(),

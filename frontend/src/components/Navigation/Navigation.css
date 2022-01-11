@@ -1,0 +1,35 @@
+
+
+
+
+li{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+}
+
+a.home:hover{
+    color:maroon;
+}
+
+a.home{
+    margin-right:40px;
+    text-decoration: none;
+    color:black;
+    font-size: large;
+}
+
+a.signup:hover{
+    color:maroon;
+}
+
+a.signup{
+    text-decoration: none;
+    color:black;
+    margin-right:40px;
+    font-size:large;
+}
+
+.login-button{
+    font-size: large;
+}

@@ -1,0 +1,13 @@
+.landing-page{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    width:80%;
+}
+
+img{
+    width: 75%;
+    height: 40%;
+    border: 1px white solid;
+    border-radius: 8px;
+}
