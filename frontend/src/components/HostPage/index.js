@@ -3,9 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './HostPage.css'
+import {useEffect} from 'react';
+import { createRoomForm } from "../../store/rooms";
+import { useHistory } from 'react-router-dom';
+
 
 function HostPage() {
+
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -14,26 +20,45 @@ function HostPage() {
   const [state, setState] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [numberRooms, setNumberRooms] = useState(0);
-  const [maxGuest, setMaxGuest] = useState(null);
-  const [hasWifi, setHasWifi] = useState(null);
-  const [hasAc, setHasAc] = useState(null);
-  const [hasFreeParking, setHasFreeParking] = useState(null);
+  const [maxGuest, setMaxGuest] = useState("");
+  const [hasWifi, setHasWifi] = useState("");
+  const [hasAc, setHasAc] = useState("");
+  const [hasFreeParking, setHasFreeParking] = useState("");
   const [pricePerNight, setPricePerNight] = useState(0);
   const [link, setLink] = useState("");
 
+
+
+  // useEffect(() => {
+  //   dispatch(addOneRoom());
+  // }, [dispatch]);
+
+
   if (!sessionUser) return <Redirect to="/" />;
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    // if (password === confirmPassword) {
-    //   setErrors([]);
-    //   return dispatch(sessionActions.signup({ email, username, password, firstName, lastName }))
-    //     .catch(async (res) => {
-    //       const data = await res.json();
-    //       if (data && data.errors) setErrors(data.errors);
-    //     });
-    // }
-    // return setErrors(['Confirm Password field must be the same as the Password field']);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+        name,
+        description,
+        address,
+        city,
+        state,
+        zipcode,
+        numberRooms,
+        maxGuest,
+        hasWifi,
+        hasAc,
+        hasFreeParking,
+        pricePerNight,
+        link,
+    }
+
+    let newRoom = await dispatch(createRoomForm(payload))
+    if (newRoom){
+        history.push(`/rooms`)
+    }
   };
 
   return (

@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import HostPage from "./components/HostPage";
+import Rooms from "./components/Rooms";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/host">
             <HostPage/>
+          </Route>
+          <Route path="/rooms">
+            <Rooms/>
           </Route>
         </Switch>
       )}
