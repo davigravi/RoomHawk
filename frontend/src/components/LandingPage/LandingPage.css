@@ -15,10 +15,18 @@
 }
 
 .img-landingpage{
+    
     width: 95%;
     height: 600px;
     border: 3px #F6CF65 solid;
     border-radius: 12px;
 
 
+}
+
+.landing-h1{
+    position: absolute;
+    /* z-index: 1; */
+    bottom:80%;
+    font-size: 40px;
 }

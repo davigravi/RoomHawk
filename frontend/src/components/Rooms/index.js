@@ -27,8 +27,7 @@ function Rooms () {
                         <li className="description">{room.description}</li>
                         <div className="middle">
                             <li>{room.address}</li>
-                            <li>{room.city}</li>
-                            <li>{room.state}</li>
+                            <li>{`${room.city}, ${room.state}`}</li>
                             <li>{room.zipcode}</li>
                             <li>{room.numberRooms} Rooms</li>
                             <li>Max Guest: {room.maxGuest}</li>
