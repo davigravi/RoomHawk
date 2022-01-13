@@ -16,9 +16,7 @@ router.post("/", asyncHandler(async function(req, res){
 
 
 router.get('/', asyncHandler(async function(req, res){
-    console.log("in backend")
     const rooms = await db.Room.findAll();
-    console.log(rooms);
     return res.json(rooms);
 })
 );

@@ -28,9 +28,9 @@ export const createRoomForm = (payload) => async dispatch => {
 }
 
 export const getRooms = () => async dispatch =>{
-  console.log("here")
+
   const response = await csrfFetch(`/api/rooms`);
-  console.log("right before response comes back")
+ 
   if(response.ok){
         const list = await response.json();
         dispatch(load(list));
