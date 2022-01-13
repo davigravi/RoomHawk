@@ -16,6 +16,7 @@ function Rooms () {
     const handleDelete = async (e) => {
         e.preventDefault();
         await dispatch(deleteARoom(e.target.value))
+            .then(dispatch(getRooms()))
             .then(history.push("/rooms"))
             .catch(async (res)=> {
                 throw new Error ("Unable to delete spot.")
@@ -43,7 +44,7 @@ function Rooms () {
                             <li>{room.numberRooms} Rooms</li>
                             <li>Max Guest: {room.maxGuest}</li>
                             <li>Price Per Night: {room.pricePerNight}</li>
-                            <button value={room.id} key={room.id} onClick={handleDelete}>Delete</button>
+                            <button className="delete-button" value={room.id} key={room.id} onClick={handleDelete}>Delete</button>
                         </div>
                         <img className="image" src={`${room.link}`}></img>
                     </ul>

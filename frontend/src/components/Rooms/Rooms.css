@@ -62,3 +62,12 @@ ul.content{
     background-image: url(../../../public/images/pictureframe.jpg);
     /* background-size: 150em; */
 }
+
+.delete-button{
+    width: 50px;
+    display:block;
+    align-items: center;
+    /* right:-193px; */
+    position: relative;
+
+}
