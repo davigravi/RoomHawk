@@ -1,0 +1,7 @@
+.edit-button{
+    width: 50px;
+    display:block;
+    align-items: center;
+    /* right:-193px; */
+    position: relative;
+}

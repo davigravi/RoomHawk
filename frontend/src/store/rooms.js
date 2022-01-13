@@ -35,7 +35,11 @@ export const deleteARoom = (roomId) => async dispatch => {
   return;
 }
 
+export const editRoomForm = (payload)=> async dispatch => {
+  // const response = await csrfFetch(`/api/rooms/${roomId}`, {
 
+  // })
+}
 
 export const createRoomForm = (payload) => async dispatch => {
     const response = await csrfFetch(`/api/rooms`, {

@@ -4,6 +4,7 @@ import { getRooms } from "../../store/rooms";
 import './Rooms.css';
 import {deleteARoom} from "../../store/rooms";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import EditFormModal from "../EditFormModal";
 
 
 function Rooms () {
@@ -53,6 +54,7 @@ function Rooms () {
                             <li>Max Guest: {room.maxGuest}</li>
                             <li>Price Per Night: {room.pricePerNight}</li>
                             {sessionUser.id === room.userId ?  <button className="delete-button" value={room.id} key={room.id} onClick={handleDelete}>Delete</button> : null }
+                            {sessionUser.id === room.userId ?  <EditFormModal/> : null }
                         </div>
                         <img className="image" src={`${room.link}`}></img>
                     </ul>
