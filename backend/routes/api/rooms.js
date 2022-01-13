@@ -68,7 +68,7 @@ router.put("/:id", asyncHandler(async function (req, res) {
 
 
     await roomToUpdate.update(updatedRoom)
-    console.log("updated room?", updatedRoom)
+   
     return res.json(updatedRoom);
 })
 );
