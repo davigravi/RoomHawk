@@ -12,6 +12,8 @@ function Rooms () {
     const history = useHistory();
 
     const rooms = useSelector(state=>state.rooms.list);
+    const sessionUser = useSelector((state) => state.session.user);
+
 
     const handleDelete = async (e) => {
         e.preventDefault();
@@ -23,10 +25,16 @@ function Rooms () {
             })
     }
 
+
+
     useEffect(()=>{
         dispatch(getRooms());
     }, [dispatch])
 
+
+    // if(sessionUser.id !== room.userId){
+
+    // }
 
     return(
 
@@ -44,7 +52,7 @@ function Rooms () {
                             <li>{room.numberRooms} Rooms</li>
                             <li>Max Guest: {room.maxGuest}</li>
                             <li>Price Per Night: {room.pricePerNight}</li>
-                            <button className="delete-button" value={room.id} key={room.id} onClick={handleDelete}>Delete</button>
+                            {sessionUser.id === room.userId ?  <button className="delete-button" value={room.id} key={room.id} onClick={handleDelete}>Delete</button> : null }
                         </div>
                         <img className="image" src={`${room.link}`}></img>
                     </ul>

@@ -29,13 +29,16 @@ ul.content{
     margin:0 auto;
     display:flex;
     background-color:white;
+    overflow:auto;
 }
 
 .description{
+
     width: 40%;
     font-size:18px;
     text-align: left;
     text-indent: 2em;
+    overflow:auto;
 }
 
 .middle{
@@ -45,6 +48,7 @@ ul.content{
     font-size:18px;
     align-items: right;
     width:25%;
+    overflow:auto;
 
 }
 
