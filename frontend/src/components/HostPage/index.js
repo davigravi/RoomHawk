@@ -14,7 +14,6 @@ function HostPage() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   // const rooms = useSelector((state) => state.rooms.list);
-  const [userId, setUserId] = useState(0);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
@@ -40,10 +39,11 @@ function HostPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUserId(sessionUser.id);
+
+
 
     const payload = {
-        userId,
+        userId: sessionUser.id,
         name,
         description,
         address,

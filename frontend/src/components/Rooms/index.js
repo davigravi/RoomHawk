@@ -18,20 +18,22 @@ function Rooms () {
 
     return(
 
-        <div>
+        <div className="parent-div">
              <h2>Rooms</h2>
                 {rooms.map((room)=>
                 <div key={room.id} id={room.id}>
                     <h3 className="room-name">{room.name}</h3>
                     <ul className="content">
-                        <li>{room.description}</li>
-                        <li>{room.address}</li>
-                        <li>{room.city}</li>
-                        <li>{room.state}</li>
-                        <li>{room.zipcode}</li>
-                        <li>{room.numberRooms} Rooms</li>
-                        <li>Max Guest: {room.maxGuest}</li>
-                        <li>Price Per Night: {room.pricePerNight}</li>
+                        <li className="description">{room.description}</li>
+                        <div className="middle">
+                            <li>{room.address}</li>
+                            <li>{room.city}</li>
+                            <li>{room.state}</li>
+                            <li>{room.zipcode}</li>
+                            <li>{room.numberRooms} Rooms</li>
+                            <li>Max Guest: {room.maxGuest}</li>
+                            <li>Price Per Night: {room.pricePerNight}</li>
+                        </div>
                         <img className="image" src={`${room.link}`}></img>
                     </ul>
                 </div>
