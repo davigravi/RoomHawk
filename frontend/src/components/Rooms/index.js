@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import {Link} from 'react-router-dom';
 import { getRooms } from "../../store/rooms";
 import './Rooms.css';
-// state.rooms.list
+import {deleteARoom} from "../../store/rooms";
+
+
 function Rooms () {
 
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function Rooms () {
                             <li>{room.numberRooms} Rooms</li>
                             <li>Max Guest: {room.maxGuest}</li>
                             <li>Price Per Night: {room.pricePerNight}</li>
+                            <button onClick={()=>dispatch(deleteARoom(room.id))}>Delete</button> 
                         </div>
                         <img className="image" src={`${room.link}`}></img>
                     </ul>

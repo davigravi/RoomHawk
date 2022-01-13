@@ -5,8 +5,9 @@
 
 .host-parent-div{
     width:70%;
+    display:flex;
+    flex-direction: column;
     margin:0 auto;
-    /* border:3px solid #F6CF65; */
     padding-top: 5px;
     z-index: 99;
     background-color:transparent;
@@ -15,26 +16,29 @@
 
 .host-h1{
     font-size: 42px;
-    color:black;
+    color:white;
 }
 
-input{
+.host-parent-div input{
     padding: 6px 0px;
     margin-bottom: 20px;
     background-color:white;
     width: 50%;
     border: transparent solid 2px;
+    display:block;
 }
 
-label{
+.host-parent-div label{
     font-size: 18px;
     font-weight:bold;
-    color:black;
+    color:white;
+
 }
 
 
-.submit-button{
-    width:150px;
+.host-parent-div .submit-button{
+    /* width:150px; */
+    width:30%;
     font-weight: bold;
     border: 2px solid black;
 }
@@ -44,6 +48,7 @@ label{
 
     background-image: url(../../../public/images/camera.jpg);
     background-size: cover;
+    height: 100%;
     width: 85%;
     margin:0 auto;
 }

@@ -9,7 +9,7 @@ const setUser = (user) => {
       payload: user,
     };
   };
-  
+
   const removeUser = () => {
     return {
       type: REMOVE_USER,
@@ -23,7 +23,7 @@ const setUser = (user) => {
       body: JSON.stringify({
         credential,
         password,
-        firstName, 
+        firstName,
         lastName,
       }),
     });
@@ -71,7 +71,7 @@ const setUser = (user) => {
     switch (action.type) {
       case SET_USER:
         newState = Object.assign({}, state);
-        //newState = {...state}
+        newState = {...state}
         newState.user = action.payload;
         return newState;
       case REMOVE_USER:

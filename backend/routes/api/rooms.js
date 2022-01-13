@@ -14,6 +14,17 @@ router.post("/", asyncHandler(async function(req, res){
 
 );
 
+// router.delete("/:id", asyncHandler(async function (req, res) {
+//     const roomId = parseInt(req.params.id, 10)
+//     const room = await db.Room.findByPk(roomId);
+
+//     if (room){
+//         await room.destroy();
+//     }
+
+//     return res.json(roomId);
+//   }));
+
 
 router.get('/', asyncHandler(async function(req, res){
     const rooms = await db.Room.findAll();

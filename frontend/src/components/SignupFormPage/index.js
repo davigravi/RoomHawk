@@ -31,7 +31,7 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="signup-form-div" onSubmit={handleSubmit}>
       <div className="signup-container">
         <div className='signup-content'>
           <h1 className='signup-header'>Welcome to RoomHawk</h1>
@@ -41,6 +41,7 @@ function SignupFormPage() {
           <label>
             Email:
             <input
+              className="email"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -92,7 +93,7 @@ function SignupFormPage() {
               required
               />
           </label>
-          <button className='submit-button' type="submit">Sign Up</button>
+          <button className='signup-button' type="submit">Sign Up</button>
         </div>
       </div>
     </form>
