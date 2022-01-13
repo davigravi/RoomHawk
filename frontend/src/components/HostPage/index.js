@@ -66,15 +66,15 @@ function HostPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div >
+    <form className="host-form" onSubmit={handleSubmit}>
+      <div className="host-parent-div">
         <div >
-          <h1 >Tell Us About Your Place</h1>
+          <h1 className="host-h1">Tell Us About Your Place.</h1>
           {/* <ul className="errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul> */}
           <label>
-            Name
+            Name:
             <input
               type="text"
               value={name}
@@ -83,7 +83,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Description
+            Description:
             <input
               type="text"
               value={description}
@@ -92,7 +92,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Address
+            Address:
             <input
               type="text"
               value={address}
@@ -110,7 +110,7 @@ function HostPage() {
               />
           </label>
           <label>
-            State
+            State:
             <input
               type="text"
               value={state}
@@ -119,7 +119,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Zipcode
+            Zipcode:
             <input
               type="text"
               value={zipcode}
@@ -128,7 +128,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Number of Rooms
+            Number of Rooms:
             <input
               type="number"
               value={numberRooms}
@@ -137,7 +137,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Max Guests
+            Max Guests:
             <input
               type="number"
               value={maxGuest}
@@ -146,8 +146,9 @@ function HostPage() {
               />
           </label>
           <label>
-            Has Wifi
+            Has Wifi:
             <input
+              className="wifi"
               type="checkbox"
               value="true"
               onChange={(e) => setHasWifi(e.target.value)}
@@ -155,8 +156,9 @@ function HostPage() {
               />
           </label>
           <label>
-            Has A/C
+            Has A/C:
             <input
+              className="ac"
               type="checkbox"
               value="true"
               onChange={(e) => setHasAc(e.target.value)}
@@ -164,8 +166,9 @@ function HostPage() {
               />
           </label>
           <label>
-            Has Free Parking
+            Has Free Parking:
             <input
+              className="parking"
               type="checkbox"
               value="true"
               onChange={(e) => setHasFreeParking(e.target.value)}
@@ -173,7 +176,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Price Per Night
+            Price Per Night:
             <input
               type="text"
               value={pricePerNight}
@@ -182,7 +185,7 @@ function HostPage() {
               />
           </label>
           <label>
-            Photo URL
+            Photo URL:
             <input
               type="text"
               value={link}

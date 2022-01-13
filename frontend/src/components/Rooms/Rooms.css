@@ -13,7 +13,8 @@
 
 h2{
     font-size: 42px;
-    color:#C3ECB2;
+    margin:0 auto;
+    color:#9b001a;
 }
 
 h3{
@@ -21,10 +22,13 @@ h3{
 }
 
 ul.content{
-    border:8px solid #F6CF65;
+    border:2px solid black;
     /* border:2px solid #8D8741; */
     border-radius:12px;
+    width:85%;
+    margin:0 auto;
     display:flex;
+    background-color:white;
 }
 
 .description{
@@ -50,4 +54,11 @@ ul.content{
     width:35%;
     object-fit: fill;
     /* border-radius: 8px; */
+}
+
+.parent-div{
+    width:85%;
+    margin: 0 auto;
+    background-image: url(../../../public/images/pictureframe.jpg);
+    /* background-size: 150em; */
 }

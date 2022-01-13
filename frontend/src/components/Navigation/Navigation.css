@@ -9,7 +9,7 @@ header{
     height:62px;
     background-color: white;
     /* border-bottom: black 1px solid; */
-    box-shadow: 0px 4px  #C3ECB2;
+    box-shadow: 0px 2px  black;
     z-index: 99;
 }
 
@@ -22,23 +22,23 @@ li{
 }
 
 a.home:hover{
-    color:black;
+    color:#9b001a;
 }
 
 a.home{
     margin-right:40px;
     text-decoration: none;
-    color:#F6CF65;
+    color:black;
     font-size: large;
 }
 
 a.signup:hover{
-    color:black;
+    color:#9b001a;
 }
 
 a.signup{
     text-decoration: none;
-    color:#F6CF65;
+    color:black;
     margin-right:40px;
     font-size:large;
 }
@@ -49,23 +49,23 @@ a.signup{
 
 
 a.host:hover{
-    color:black;
+    color:#9b001a;
 }
 
 a.host{
     margin-right:40px;
     text-decoration: none;
-    color:#F6CF65;
+    color:black;
     font-size: large;
 }
 
 a.listings:hover{
-    color:black;
+    color:#9b001a;
 }
 
 a.listings{
     text-decoration: none;
-    color:#F6CF65;
+    color:black;
     margin-right:40px;
     font-size:large;
 }

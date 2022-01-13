@@ -1,3 +1,62 @@
 *{
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
+
+
+.host-parent-div{
+    width:70%;
+    margin:0 auto;
+    /* border:3px solid #F6CF65; */
+    padding-top: 5px;
+    z-index: 99;
+    background-color:transparent;
+}
+
+
+.host-h1{
+    font-size: 42px;
+    color:black;
+}
+
+input{
+    padding: 6px 0px;
+    margin-bottom: 20px;
+    background-color:white;
+    width: 50%;
+    border: transparent solid 2px;
+}
+
+label{
+    font-size: 18px;
+    font-weight:bold;
+    color:black;
+}
+
+
+.submit-button{
+    width:150px;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+.host-form{
+    z-index:1;
+
+    background-image: url(../../../public/images/camera.jpg);
+    background-size: cover;
+    width: 85%;
+    margin:0 auto;
+}
+
+.parking{
+    width: 25px;
+
+}
+
+.ac{
+    width: 25px;
+}
+
+.wifi{
+    width: 25px;
+}

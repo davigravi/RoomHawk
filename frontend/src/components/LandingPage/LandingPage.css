@@ -9,18 +9,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width:90%;
+    width: 85%;
     margin:0 auto;
     background-color: white;
+    background-image:url(../../../public/images/bike.jpg);
+    background-size:100em;
 }
 
 .img-landingpage{
-    
-    width: 95%;
+
+    width: 90%;
     height: 600px;
     border: 3px #F6CF65 solid;
     border-radius: 12px;
-
+    position: absolute;
+    bottom:15%;
 
 }
 
@@ -29,4 +32,11 @@
     /* z-index: 1; */
     bottom:80%;
     font-size: 40px;
+    color:white;
+}
+
+.things{
+    /* color:cornsilk; */
+    color:black;
+
 }
