@@ -35,10 +35,17 @@ export const deleteARoom = (roomId) => async dispatch => {
   return;
 }
 
-export const editRoomForm = (payload)=> async dispatch => {
-  // const response = await csrfFetch(`/api/rooms/${roomId}`, {
-
-  // })
+export const editRoomForm = (roomId, payload)=> async dispatch => {
+  const response = await csrfFetch(`/api/rooms/${roomId}`, {
+    method: 'PUT',
+    headers:{'Content-Type' : 'application/json'},
+    body: JSON.stringify(payload)
+  })
+  if(response.ok){
+    const data = await response.json();
+    dispatch(addOneRoom(data))
+    return data;
+  }
 }
 
 export const createRoomForm = (payload) => async dispatch => {

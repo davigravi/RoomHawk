@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
-// import { editRoomForm } from "../../store/rooms";
+import {useParams} from 'react-router-dom'
+import { editRoomForm } from "../../store/rooms";
 
 function EditForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
+
+    const {roomId} = useParams();
 
     const [newName, setNewName] = useState("");
     const [newDescription, setNewDescription] = useState("");
@@ -44,10 +46,10 @@ function EditForm() {
             newLink,
         }
 
-        // let updatedRoom = await dispatch(EditRoomForm(payload))
-        // if (updatedRoom) {
-        //     history.push(`/rooms`);
-        // }
+        let updatedRoom = await dispatch(editRoomForm(roomId, payload))
+        if (updatedRoom) {
+            history.push(`/rooms`);
+        }
 
 
     }

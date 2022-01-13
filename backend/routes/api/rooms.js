@@ -26,6 +26,23 @@ router.delete("/:id", asyncHandler(async function (req, res) {
   }));
 
 
+  router.put("/:id",asyncHandler(async function (req, res) {
+      const roomId = parseInt(req.params.id, 10)
+      const room = await Room.findOne({
+          where: {id: roomId}
+      })
+      
+      const item = await ItemsRepository.updateItem(req.body);
+      return res.json(item);
+    })
+  );
+
+
+
+
+
+
+
 router.get('/', asyncHandler(async function(req, res){
     const rooms = await db.Room.findAll();
     return res.json(rooms);
