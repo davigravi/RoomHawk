@@ -21,19 +21,15 @@ const deleteRoom = id => ({
 })
 
 
-export const deleteARoom = (payload) => async dispatch => {
-  const history = useHistory();
-  const id = payload;
-  const response = await csrfFetch(`/api/rooms/${id}`, {
-    method: `POST`,
-    headers: {'Content-Type' : 'application/json'},
-    body: JSON.stringify(payload)
+export const deleteARoom = (roomId) => async dispatch => {
+  console.log(roomId)
+  const response = await csrfFetch(`/api/rooms/${roomId}`, {
+    method: `DELETE`,
   })
 
   if (response.ok){
-    const id = await response.json();
-    dispatch(deleteRoom(id));
-    history.push(`/rooms`)
+    const deletedRoom = await response.json();
+    dispatch(deleteRoom(deletedRoom));
 
   }
   return;
@@ -85,7 +81,11 @@ const roomsReducer = (state = initialState, action) => {
             ...state,
             list: action.list,
           };
-        }
+        }case DELETE_ONE: {
+            const newState = { ...state };
+            delete newState[action.roomId];
+            return newState;
+          }
         case ADD_ONE: {
           if (!state[action.room.id]) {
             const newState = {

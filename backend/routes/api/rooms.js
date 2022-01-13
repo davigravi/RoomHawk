@@ -14,16 +14,16 @@ router.post("/", asyncHandler(async function(req, res){
 
 );
 
-// router.delete("/:id", asyncHandler(async function (req, res) {
-//     const roomId = parseInt(req.params.id, 10)
-//     const room = await db.Room.findByPk(roomId);
+router.delete("/:id", asyncHandler(async function (req, res) {
+    const room = await db.Room.findByPk(req.params.id);
 
-//     if (room){
-//         await room.destroy();
-//     }
+    if (!room){
+        throw new Error ('Unable to delete spot')
+    }
 
-//     return res.json(roomId);
-//   }));
+    await room.destroy();
+    return res.json(room);
+  }));
 
 
 router.get('/', asyncHandler(async function(req, res){
