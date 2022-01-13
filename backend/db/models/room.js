@@ -75,7 +75,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Room.associate = function(models) {
     Room.belongsTo(models.User,{foreignKey:"userId"})
-    // Room.belongsTo(models.Reservation,{foreignKey:"roomId"})
   };
   return Room;
 };

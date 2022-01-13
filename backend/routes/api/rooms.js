@@ -28,10 +28,12 @@ router.delete("/:id", asyncHandler(async function (req, res) {
 
 
 router.put("/:id", asyncHandler(async function (req, res) {
-    const {roomId} = req.body;
-    const roomToUpdate = await db.Room.findByPk(roomId);
 
-    console.log("i am here")
+    const roomId = req.params.id
+    const roomToUpdate = await db.Room.findByPk(roomId);
+    console.log("this is room to update", roomToUpdate)
+
+
     const { userId,
         newName,
         newDescription,
@@ -63,11 +65,11 @@ router.put("/:id", asyncHandler(async function (req, res) {
         newPricePerNight,
         newLink
     };
-    console.log("i am at the end")
-    console.log("updatedRoom", updatedRoom)
+
 
     await roomToUpdate.update(updatedRoom)
-    return res.json(roomToUpdate);
+    console.log("updated room?", updatedRoom)
+    return res.json(updatedRoom);
 })
 );
 

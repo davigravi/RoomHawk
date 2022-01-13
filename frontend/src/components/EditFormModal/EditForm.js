@@ -8,8 +8,10 @@ function EditForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
+    const rooms = useSelector(state=>state.rooms.list);
 
-    const {roomId} = useParams();
+
+
 
     const [newName, setNewName] = useState("");
     const [newDescription, setNewDescription] = useState("");
@@ -26,8 +28,19 @@ function EditForm() {
     const [newLink, setNewLink] = useState("");
 
 
+    const getRoomIdFunc =()=>{
+        for(let i = 0; i < rooms.length; i++){
+            let room = rooms[i];
+            if(sessionUser.id === room.userId){
+                return room.id;
+            }
+        }
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const roomId = getRoomIdFunc();
+
 
         const payload = {
             userId: sessionUser.id,
@@ -51,8 +64,7 @@ function EditForm() {
             history.push(`/rooms`);
         }
 
-
-    }
+    };
 
 
 
