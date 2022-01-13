@@ -39,7 +39,7 @@ export const editRoomForm = (roomId, payload)=> async dispatch => {
   const response = await csrfFetch(`/api/rooms/${roomId}`, {
     method: 'PUT',
     headers:{'Content-Type' : 'application/json'},
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload, roomId)
   })
   if(response.ok){
     const data = await response.json();
