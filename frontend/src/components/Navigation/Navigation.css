@@ -45,3 +45,14 @@ a.host{
     color:black;
     font-size: large;
 }
+
+a.listings:hover{
+    color:maroon;
+}
+
+a.listings{
+    text-decoration: none;
+    color:black;
+    margin-right:40px;
+    font-size:large;
+}

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './HostPage.css'
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { createRoomForm } from "../../store/rooms";
 import { useHistory } from 'react-router-dom';
 
@@ -13,6 +13,8 @@ function HostPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
+  // const rooms = useSelector((state) => state.rooms.list);
+  const [userId, setUserId] = useState(0);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
@@ -21,9 +23,9 @@ function HostPage() {
   const [zipcode, setZipcode] = useState("");
   const [numberRooms, setNumberRooms] = useState(0);
   const [maxGuest, setMaxGuest] = useState("");
-  const [hasWifi, setHasWifi] = useState("");
-  const [hasAc, setHasAc] = useState("");
-  const [hasFreeParking, setHasFreeParking] = useState("");
+  const [hasWifi, setHasWifi] = useState(false);
+  const [hasAc, setHasAc] = useState(false);
+  const [hasFreeParking, setHasFreeParking] = useState(false);
   const [pricePerNight, setPricePerNight] = useState(0);
   const [link, setLink] = useState("");
 
@@ -34,12 +36,14 @@ function HostPage() {
   // }, [dispatch]);
 
 
-  if (!sessionUser) return <Redirect to="/" />;
+  // if (!sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setUserId(sessionUser.id);
 
     const payload = {
+        userId,
         name,
         description,
         address,
@@ -145,7 +149,7 @@ function HostPage() {
             Has Wifi
             <input
               type="checkbox"
-              value={hasWifi}
+              value="true"
               onChange={(e) => setHasWifi(e.target.value)}
               required
               />
@@ -154,7 +158,7 @@ function HostPage() {
             Has A/C
             <input
               type="checkbox"
-              value={hasAc}
+              value="true"
               onChange={(e) => setHasAc(e.target.value)}
               required
               />
@@ -163,7 +167,7 @@ function HostPage() {
             Has Free Parking
             <input
               type="checkbox"
-              value={hasFreeParking}
+              value="true"
               onChange={(e) => setHasFreeParking(e.target.value)}
               required
               />

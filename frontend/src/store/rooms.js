@@ -1,11 +1,11 @@
+import { csrfFetch } from './csrf';
 
 const ADD_ONE = 'rooms/ADD_ONE';
 const LOAD = 'rooms/LOAD';
 
-
-const load = rooms => ({
+const load = list => ({
     type: LOAD,
-    rooms,
+    list,
 })
 
 const addOneRoom = room => ({
@@ -13,9 +13,8 @@ const addOneRoom = room => ({
     room,
 })
 
-
 export const createRoomForm = (payload) => async dispatch => {
-    const response = await fetch(`/api/rooms`, {
+    const response = await csrfFetch(`/api/rooms`, {
         method: `POST`,
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify(payload)
@@ -29,12 +28,16 @@ export const createRoomForm = (payload) => async dispatch => {
 }
 
 export const getRooms = () => async dispatch =>{
-    const response = await fetch(`/api/rooms`);
-    if(response.ok){
+  console.log("here")
+  const response = await csrfFetch(`/api/rooms`);
+  console.log("right before response comes back")
+  if(response.ok){
         const list = await response.json();
         dispatch(load(list));
     }
+  return;
 }
+
 
 
 const initialState = {
@@ -78,3 +81,6 @@ const roomsReducer = (state = initialState, action) => {
           return state;
       }
 }
+
+
+export default roomsReducer;
