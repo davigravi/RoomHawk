@@ -1,6 +1,24 @@
-button{
+/* button{
     width:30px;
     height: 30px;
+} */
+
+.log-out-button{
+    width: 50px;
+    height: 30px;
+    font-weight: bold;
+    border: solid 1px black;
 }
 
+.nav-icon-button{
+    width:30px;
+    height: 25px;
+    background-image: url(../../../public/images/better\ menu.png);
+    outline: none;
+    border: 1px solid transparent;
+}
 
+.profile-dropdown{
+    color:rgb(190, 134, 49);
+    font-weight: bold;
+}

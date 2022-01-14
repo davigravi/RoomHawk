@@ -33,11 +33,6 @@ const validateRoom = [
         .notEmpty()
         .isInt()
         .withMessage('Please provide an Integer'),
-    // check('maxGuests')
-    //     .exists({checkFalsy:true})
-    //     .notEmpty()
-    //     .isInt({ min:0, max: 50})
-    //     .withMessage('Please provide a number less than 50'),
     handleValidationErrors,
 
 ]
@@ -85,9 +80,9 @@ validateRoom,
         zipcode:newZipcode,
         numberRooms:newNumberRooms,
         maxGuest:newMaxGuest,
-        hasWifi:newHasWifi,
-        hasAc:newHasAc,
-        hasFreeParking:newHasFreeParking,
+        // hasWifi:newHasWifi,
+        // hasAc:newHasAc,
+        // hasFreeParking:newHasFreeParking,
         pricePerNight:newPricePerNight,
         link:newLink } = req.body;
 
@@ -101,9 +96,9 @@ validateRoom,
         zipcode:newZipcode,
         numberRooms:newNumberRooms,
         maxGuest:newMaxGuest,
-        hasWifi:newHasWifi,
-        hasAc:newHasAc,
-        hasFreeParking:newHasFreeParking,
+        // hasWifi:newHasWifi,
+        // hasAc:newHasAc,
+        // hasFreeParking:newHasFreeParking,
         pricePerNight:newPricePerNight,
         link:newLink
     };

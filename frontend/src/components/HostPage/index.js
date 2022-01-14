@@ -53,9 +53,9 @@ function HostPage() {
         zipcode,
         numberRooms,
         maxGuest,
-        hasWifi,
-        hasAc,
-        hasFreeParking,
+        // hasWifi,
+        // hasAc,
+        // hasFreeParking,
         pricePerNight,
         link,
     }
@@ -151,7 +151,7 @@ function HostPage() {
               required
               />
           </label>
-          <label>
+          {/* <label>
             Has Wifi:
             <input
               className="wifi"
@@ -180,7 +180,7 @@ function HostPage() {
               onChange={(e) => setHasFreeParking(e.target.value)}
               required
               />
-          </label>
+          </label> */}
           <label>
             Price Per Night:
             <input

@@ -21,9 +21,9 @@ function EditForm() {
     const [newZipcode, setNewZipcode] = useState("");
     const [newNumberRooms, setNewNumberRooms] = useState(0);
     const [newMaxGuest, setNewMaxGuest] = useState("");
-    const [newHasWifi, setNewHasWifi] = useState(false);
-    const [newHasAc, setNewHasAc] = useState(false);
-    const [newHasFreeParking, setNewHasFreeParking] = useState(false);
+    // const [newHasWifi, setNewHasWifi] = useState(false);
+    // const [newHasAc, setNewHasAc] = useState(false);
+    // const [newHasFreeParking, setNewHasFreeParking] = useState(false);
     const [newPricePerNight, setNewPricePerNight] = useState(0);
     const [newLink, setNewLink] = useState("");
     const [errors, setErrors] = useState([]);
@@ -53,9 +53,9 @@ function EditForm() {
             zipcode:newZipcode,
             numberRooms:newNumberRooms,
             maxGuest:newMaxGuest,
-            hasWifi:newHasWifi,
-            hasAc:newHasAc,
-            hasFreeParking:newHasFreeParking,
+            // hasWifi:newHasWifi,
+            // hasAc:newHasAc,
+            // hasFreeParking:newHasFreeParking,
             pricePerNight:newPricePerNight,
             link:newLink,
         }
@@ -161,7 +161,7 @@ function EditForm() {
                         required
                     />
                 </label>
-                <label>
+                {/* <label>
                     Has Wifi:
                     <input
                         className="wifi"
@@ -190,7 +190,7 @@ function EditForm() {
                         onChange={(e) => setNewHasFreeParking(e.target.value)}
                         required
                     />
-                </label>
+                </label> */}
                 <label>
                     Price Per Night:
                     <input

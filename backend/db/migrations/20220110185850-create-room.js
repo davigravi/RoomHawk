@@ -45,18 +45,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull:false,
       },
-      hasWifi: {
-        type: Sequelize.BOOLEAN,
-        allowNull:false,
-      },
-      hasAc: {
-        type: Sequelize.BOOLEAN,
-        allowNull:false,
-      },
-      hasFreeParking: {
-        type: Sequelize.BOOLEAN,
-        allowNull:false,
-      },
       pricePerNight: {
         type: Sequelize.TEXT,
         allowNull:false,

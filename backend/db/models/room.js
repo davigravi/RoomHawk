@@ -44,18 +44,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    hasWifi: {
-      type: DataTypes.BOOLEAN,
-      allowNull:false,
-    },
-    hasAc: {
-      type: DataTypes.BOOLEAN,
-      allowNull:false,
-    },
-    hasFreeParking: {
-      type: DataTypes.BOOLEAN,
-      allowNull:false,
-    },
     pricePerNight: {
       type: DataTypes.TEXT,
       allowNull:false,
