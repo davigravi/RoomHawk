@@ -29,7 +29,7 @@ ul.content{
     margin:0 auto;
     display:flex;
     background-color:white;
-    overflow:auto;
+    /* overflow:auto; */
 }
 
 .description{

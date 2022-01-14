@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import './demoNavLink.css'
-import { signup } from "../../store/session";
+import { signup} from "../../store/session";
 
 
 function DemoUser(){
@@ -16,12 +16,17 @@ function DemoUser(){
     const [email, setEmail] = useState('');
 
     const handleSubmit = async (e)=> {
+
+        const randomName = Math.random().toString(36).substring(2,8);
+        const randomEmail = Math.random().toString(36).substring(2,8) + "@" + Math.random().toString(36).substring(2,8)+ ".com";
+        console.log(randomEmail)
         e.preventDefault();
-        setCredential('hello@world.com');
+        setCredential(randomName);
         setPassword('123456')
-        setUserName('HelloWorld');
+        setUserName(randomName);
         setFirstName("Hello");
         setLastName("World");
+        setEmail(randomEmail)
 
         const user = {
             username,
@@ -43,8 +48,9 @@ function DemoUser(){
         //         const data = await res.json();
         //         return;
         //     })
-
-        return dispatch(sessionActions.login({ credential, password })).catch(
+        console.log(credential, password)
+        console.log(user)
+        return dispatch(sessionActions.signup(user)).catch(
             async (res) => {
               const data = await res.json();
             }
