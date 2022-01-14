@@ -27,6 +27,7 @@ function HostPage() {
   const [hasFreeParking, setHasFreeParking] = useState(false);
   const [pricePerNight, setPricePerNight] = useState(0);
   const [link, setLink] = useState("");
+  const [errors, setErrors] = useState([]);
 
 
 
@@ -59,7 +60,12 @@ function HostPage() {
         link,
     }
 
+    setErrors([])
     let newRoom = await dispatch(createRoomForm(payload))
+      .catch(async(res)=>{
+        const data = await res.json()
+        if (data && data.errors) return setErrors(data.errors)
+      })
     if (newRoom){
         history.push(`/rooms`)
     }
@@ -70,9 +76,9 @@ function HostPage() {
       <div className="host-parent-div">
         <div >
           <h1 className="host-h1">Tell Us About Your Place.</h1>
-          {/* <ul className="errors">
+          <ul className="errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul> */}
+          </ul>
           <label>
             Name:
             <input

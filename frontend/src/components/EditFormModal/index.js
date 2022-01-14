@@ -1,14 +1,20 @@
 
 
 import {Modal} from '../../context/Modal';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import EditForm from './EditForm';
 import './index.css'
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditFormModal(){
     const [showEditModal, setShowEditModal] = useState(false);
+    const history = useHistory();
 
+    useEffect(() => {
+    if(showEditModal === false){
+        history.push('/rooms')
+    }
+  }, [showEditModal]);
 
 
     return(

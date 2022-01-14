@@ -26,6 +26,7 @@ function EditForm() {
     const [newHasFreeParking, setNewHasFreeParking] = useState(false);
     const [newPricePerNight, setNewPricePerNight] = useState(0);
     const [newLink, setNewLink] = useState("");
+    const [errors, setErrors] = useState([]);
 
 
     const getRoomIdFunc =()=>{
@@ -59,8 +60,14 @@ function EditForm() {
             link:newLink,
         }
 
+
+
+        setErrors([])
         let updatedRoom = await dispatch(editRoomForm(roomId, payload))
-        console.log("hi im here before the history push")
+            .catch(async(res)=>{
+                const data = await res.json()
+                if (data && data.errors) return setErrors(data.errors)
+            })
         if (updatedRoom) {
             console.log("hi im one more inside")
             history.push(`/rooms`);
@@ -78,9 +85,9 @@ function EditForm() {
                 <h1>
                     Update your information.
                 </h1>
-                {/* <ul className="errors">
+                <ul className="errors">
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul> */}
+                </ul>
                 <label>
                     Name:
                     <input

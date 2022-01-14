@@ -2,12 +2,52 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 const db = require('../../db/models');
 
-
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
 
 const router = express.Router();
 
 
-router.post("/", asyncHandler(async function (req, res) {
+const validateRoom = [
+    check('description')
+        .exists({checkFalsy:true})
+        .notEmpty()
+        .isLength({max:1000})
+        .withMessage('Please provide a shorter description')
+        .isLength({min:10})
+        .withMessage('Please provide a longer description'),
+    check('zipcode')
+        .exists({checkFalsy:true})
+        .notEmpty()
+        .isLength({min:5})
+        .withMessage('Please provide a 5 digit zipcode')
+        .isLength({max:5})
+        .withMessage('Please provide a 5 digit zipcode'),
+    check('link')
+        .exists({checkFalsy:true})
+        .notEmpty()
+        .isString()
+        .withMessage('Please provide a valid url'),
+    check('numberRooms')
+        .exists({checkFalsy:true})
+        .notEmpty()
+        .isInt()
+        .withMessage('Please provide an Integer'),
+    // check('maxGuests')
+    //     .exists({checkFalsy:true})
+    //     .notEmpty()
+    //     .isInt({ min:0, max: 50})
+    //     .withMessage('Please provide a number less than 50'),
+    handleValidationErrors,
+
+]
+
+
+
+
+router.post("/",
+validateRoom,
+ asyncHandler(async function (req, res) {
     const newRoom = await db.Room.create(req.body);
     return res.json(newRoom);
 })
@@ -27,7 +67,9 @@ router.delete("/:id", asyncHandler(async function (req, res) {
 }));
 
 
-router.put("/:id", asyncHandler(async function (req, res) {
+router.put("/:id",
+validateRoom,
+ asyncHandler(async function (req, res) {
 
     const roomId = req.params.id
     const roomToUpdate = await db.Room.findByPk(roomId);
