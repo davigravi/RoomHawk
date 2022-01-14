@@ -35,40 +35,43 @@ router.put("/:id", asyncHandler(async function (req, res) {
 
 
     const { userId,
-        newName,
-        newDescription,
-        newAddress,
-        newCity,
-        newState,
-        newZipcode,
-        newNumberRooms,
-        newMaxGuest,
-        newHasWifi,
-        newHasAc,
-        newHasFreeParking,
-        newPricePerNight,
-        newLink } = req.body;
+        name:newName,
+        description:newDescription,
+        address:newAddress,
+        city:newCity,
+        state:newState,
+        zipcode:newZipcode,
+        numberRooms:newNumberRooms,
+        maxGuest:newMaxGuest,
+        hasWifi:newHasWifi,
+        hasAc:newHasAc,
+        hasFreeParking:newHasFreeParking,
+        pricePerNight:newPricePerNight,
+        link:newLink } = req.body;
 
     const updatedRoom = {
         userId,
-        newName,
-        newDescription,
-        newAddress,
-        newCity,
-        newState,
-        newZipcode,
-        newNumberRooms,
-        newMaxGuest,
-        newHasWifi,
-        newHasAc,
-        newHasFreeParking,
-        newPricePerNight,
-        newLink
+        name:newName,
+        description:newDescription,
+        address:newAddress,
+        city:newCity,
+        state:newState,
+        zipcode:newZipcode,
+        numberRooms:newNumberRooms,
+        maxGuest:newMaxGuest,
+        hasWifi:newHasWifi,
+        hasAc:newHasAc,
+        hasFreeParking:newHasFreeParking,
+        pricePerNight:newPricePerNight,
+        link:newLink
     };
 
 
     await roomToUpdate.update(updatedRoom)
-   
+    console.log("updated room ", updatedRoom)
+    const list = await db.Room.findAll();
+    // list.push(updatedRoom);
+    // return res.json(list);
     return res.json(updatedRoom);
 })
 );

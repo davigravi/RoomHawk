@@ -44,23 +44,25 @@ function EditForm() {
 
         const payload = {
             userId: sessionUser.id,
-            newName,
-            newDescription,
-            newAddress,
-            newCity,
-            newState,
-            newZipcode,
-            newNumberRooms,
-            newMaxGuest,
-            newHasWifi,
-            newHasAc,
-            newHasFreeParking,
-            newPricePerNight,
-            newLink,
+            name:newName,
+            description:newDescription,
+            address:newAddress,
+            city:newCity,
+            state:newState,
+            zipcode:newZipcode,
+            numberRooms:newNumberRooms,
+            maxGuest:newMaxGuest,
+            hasWifi:newHasWifi,
+            hasAc:newHasAc,
+            hasFreeParking:newHasFreeParking,
+            pricePerNight:newPricePerNight,
+            link:newLink,
         }
 
         let updatedRoom = await dispatch(editRoomForm(roomId, payload))
+        console.log("hi im here before the history push")
         if (updatedRoom) {
+            console.log("hi im one more inside")
             history.push(`/rooms`);
         }
 
