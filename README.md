@@ -59,7 +59,7 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 * React
 * Redux
 * Express
-* Node.js ![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/favicon.png "Favicon")
+* Node.js 
 * PostgreSQL
 * Sequelize
 
