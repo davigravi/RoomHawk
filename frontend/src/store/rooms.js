@@ -43,7 +43,7 @@ export const deleteARoom = (roomId) => async dispatch => {
 }
 
 export const editRoomForm = (roomId, payload) => async dispatch => {
-
+  console.log(roomId)
   const response = await csrfFetch(`/api/rooms/${roomId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -53,8 +53,13 @@ export const editRoomForm = (roomId, payload) => async dispatch => {
     const newRoom = await response.json();
     // const list = await response.json();
     // dispatch(load(list))
-    dispatch(updateRoom(newRoom))
+
+    // dispatch(updateRoom(newRoom))
+
+    dispatch(addOneRoom(newRoom))
+
     return newRoom;
+    // return;
     // return list;
   }
 }
@@ -80,8 +85,8 @@ export const getRooms = () => async dispatch => {
   if (response.ok) {
     const list = await response.json();
     dispatch(load(list));
+    return;
   }
-  return;
 }
 
 

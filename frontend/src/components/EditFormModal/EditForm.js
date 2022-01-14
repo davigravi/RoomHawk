@@ -69,7 +69,7 @@ function EditForm() {
                 if (data && data.errors) return setErrors(data.errors)
             })
         if (updatedRoom) {
-            console.log("hi im one more inside")
+            console.log("going to history push now")
             history.push(`/rooms`);
         }
 
@@ -209,7 +209,7 @@ function EditForm() {
                         required
                     />
                 </label>
-                <button className='submit-edit-button' type="submit">Host</button>
+                <button className='submit-edit-button' type="submit">Update</button>
             </div>
         </form>
     )

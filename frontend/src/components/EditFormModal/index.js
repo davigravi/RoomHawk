@@ -10,11 +10,11 @@ function EditFormModal(){
     const [showEditModal, setShowEditModal] = useState(false);
     const history = useHistory();
 
-    useEffect(() => {
-    if(showEditModal === false){
-        history.push('/rooms')
-    }
-  }, [showEditModal]);
+//     useEffect(() => {
+//     if(showEditModal === false){
+//         history.push('/rooms')
+//     }
+//   }, [showEditModal]);
 
 
     return(
@@ -24,6 +24,9 @@ function EditFormModal(){
                 <Modal onClose={()=> setShowEditModal(false)}>
                     <EditForm/>
                 </Modal>
+            )}
+            {!showEditModal && (
+                history.push('/rooms')
             )}
         </>
     )
