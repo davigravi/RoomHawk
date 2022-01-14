@@ -14,7 +14,7 @@
 h2{
     font-size: 42px;
     margin:0 auto;
-    color:#9b001a;
+    color:#9f8170;
 }
 
 h3{
@@ -22,7 +22,7 @@ h3{
 }
 
 ul.content{
-    border:2px solid black;
+    border:2px solid #9f8170;
     /* border:2px solid #8D8741; */
     border-radius:12px;
     width:85%;
@@ -39,6 +39,7 @@ ul.content{
     text-align: left;
     text-indent: 2em;
     overflow:auto;
+    margin-left: 0;
 }
 
 .middle{

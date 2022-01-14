@@ -8,6 +8,8 @@ import LandingPage from "./components/LandingPage";
 import HostPage from "./components/HostPage";
 import Rooms from "./components/Rooms";
 
+
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -33,6 +35,7 @@ function App() {
             <Rooms/>
           </Route>
         </Switch>
+
       )}
     </>
   );

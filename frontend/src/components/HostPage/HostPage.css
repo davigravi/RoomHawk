@@ -13,6 +13,20 @@
     background-color:transparent;
 }
 
+.host-errors{
+    display:flex;
+    justify-content: left;
+    flex-direction: column;
+    font-size: 18px;
+    color: red;
+    position: relative;
+    right: 750px;
+}
+
+.host-errors li{
+    align-items: left;
+    text-align: left;
+}
 
 .host-h1{
     font-size: 42px;
@@ -38,7 +52,8 @@
 
 .host-parent-div .submit-button{
     /* width:150px; */
-    width:30%;
+    width:15%;
+    padding: 5px 10px;
     font-weight: bold;
     border: 2px solid black;
 }

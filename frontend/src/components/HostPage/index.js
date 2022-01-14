@@ -74,9 +74,9 @@ function HostPage() {
   return (
     <form className="host-form" onSubmit={handleSubmit}>
       <div className="host-parent-div">
-        <div >
+        <div className="parent-div-4-content">
           <h1 className="host-h1">Tell Us About Your Place.</h1>
-          <ul className="errors">
+          <ul className="host-errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           <label>

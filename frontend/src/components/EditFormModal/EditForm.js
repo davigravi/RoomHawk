@@ -81,16 +81,17 @@ function EditForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="edit-parent-div">
                 <h1>
                     Update your information.
                 </h1>
-                <ul className="errors">
+                <ul className="e-errors">
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <label>
                     Name:
                     <input
+                        className="e-name"
                         type="text"
                         value={newName}
                         onChange={(e) => setNewName(e.target.value)}
@@ -100,6 +101,7 @@ function EditForm() {
                 <label>
                     Description:
                     <input
+                        className="e-description"
                         type="text"
                         value={newDescription}
                         onChange={(e) => setNewDescription(e.target.value)}
