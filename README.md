@@ -12,32 +12,55 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 ***
 #### **Prerequisites**
 
--Node.js
+* Node.js
 
--NPM
+* NPM
 
--PostgresSQL
+* PostgresSQL
 
 **Get Started**
 
--Clone the repository: `https://github.com/davigravi/RoomHawk.git`
+* Clone the repository: `https://github.com/davigravi/RoomHawk.git`
 
--Run `npm install` to install dependencies
+* Run `npm install` to install dependencies
 
--Create a Postgres database called `auth_db`
+* Create a Postgres database called `auth_db`
 
--Create a `.env` file in the root directory, following `.env.example` as a reference.
+* Create a `.env` file in the root directory, following `.env.example` as a reference.
 
--Initialize the database:
+* Initialize the database:
 
--`npx dotenv sequelize db:migrate`
+    * `npx dotenv sequelize db:migrate`
 
- -`npx dotenv sequelize db:seed:all`
+    * `npx dotenv sequelize db:seed:all`
 
--Run `npm start` to launch the server.
+    * Run `npm start` to launch the server.
 
 ## **Features**
--Account Regristration and Sign-in
--Spots
 
-    -
+***
+
+* Account Regristration and Sign-in
+
+* Spots
+    * Users can post listings via a form.
+    * Users can view other people's listings.
+    * Users can delete their listings.
+    * Users can edit their listings.
+
+## **Technologies**
+***
+* JavaScript
+* CSS
+* React
+* Redux
+* Express
+* Node.js
+* PostgreSQL
+* Sequelize
+
+## **Documentation**
+
+***
+* [Feature List](https://github.com/davigravi/RoomHawk/wiki/Feature-List)
+* [Database Schema](https://github.com/davigravi/RoomHawk/wiki/Database-Schema)
