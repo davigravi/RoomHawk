@@ -1,15 +1,17 @@
-# **RoomHawk**
+![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/favicon.png "Favicon")
+
+# **RoomHawk** 
 
 [RoomHawk](https://room-hawk.herokuapp.com/), a full-stack application inspired by Airbnb, is an online platform for users to host and rent out spots for travel.
 
 Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more information.
 
 ## **Live Link**
-***
+
 [RoomHawk](https://room-hawk.herokuapp.com/)
 
 ## **Installation**
-***
+
 #### **Prerequisites**
 
 * Node.js
@@ -38,9 +40,11 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 
 ## **Features**
 
-***
+
 
 * Account Regristration and Sign-in
+
+![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/readme1.png "View Listings")
 
 * Spots
     * Users can post listings via a form.
@@ -49,18 +53,18 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
     * Users can edit their listings.
 
 ## **Technologies**
-***
+
 * JavaScript
 * CSS
 * React
 * Redux
 * Express
-* Node.js
+* Node.js 
 * PostgreSQL
 * Sequelize
 
 ## **Documentation**
 
-***
+
 * [Feature List](https://github.com/davigravi/RoomHawk/wiki/Feature-List)
 * [Database Schema](https://github.com/davigravi/RoomHawk/wiki/Database-Schema)
