@@ -1,6 +1,6 @@
 ![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/favicon.png "Favicon")
 
-# **RoomHawk** 
+# **RoomHawk**
 
 [RoomHawk](https://room-hawk.herokuapp.com/), a full-stack application inspired by Airbnb, is an online platform for users to host and rent out spots for travel.
 
@@ -54,14 +54,14 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 
 ## **Technologies**
 
-* JavaScript
-* CSS
-* React
-* Redux
-* Express
-* Node.js 
-* PostgreSQL
-* Sequelize
+* <img src="frontend/public/images/jslogo.png" width="40" height="40"> JavaScript
+* <img src="frontend/public/images/cs logo.png" width="40" height="40"> CSS
+* <img src="frontend/public/images/reacticon.png" width="40" height="40"> React
+* <img src="frontend/public/images/reduxicon.png" width="40" height="40"> Redux
+* <img src="frontend/public/images/express.png" width="40" height="40"> Express
+* <img src="frontend/public/images/node-js-icon.jpg" width="40" height="40"> Node.js
+* <img src="frontend/public/images/postgres icon.png" width="40" height="40"> PostgreSQL
+* <img src="frontend/public/images/sequelize.png" width="40" height="40"> Sequelize
 
 ## **Documentation**
 
